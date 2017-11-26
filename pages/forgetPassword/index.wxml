@@ -1,0 +1,38 @@
+<view class='login register' >
+  <view class="login_slogan">请设置您的新密码</view>
+
+  <view class='register_phone'>
+    <text>{{phoneNum}}</text>
+  </view>
+  <view class="login_input">
+      <input placeholder='请输入验证码' type='text'   maxlength='11' bindinput='ipt_sms' value='{{smsNum}}'/>
+
+      <view class='send_sms' bindtap='getSms' wx-if='{{!isSend}}'>获取验证码</view>
+      <view class='send_sms_end'  wx-if='{{isSend}}'>{{time}}s 重新获取</view>
+      
+    </view>
+    <view class='login_err hidden' wx-if="{{!isPhoneNum && !isRegister}}">请检查手机号码是否正确</view>
+    
+    
+  <view class="login_input">
+    <input placeholder='请输入登录密码' type='text' password='{{!isOpenEye}}'  maxlength='11' bindinput='ipt_pass_word' value='{{password}}'/>
+    <view class='login_ipt_icon err' wx-if="{{!isOpenEye}}" bindtap='changeOpenEye'>
+      <image src='../../images/closeeye@2x.png'></image>
+    </view>
+    <view class='login_ipt_icon cor' wx-if="{{isOpenEye}}" bindtap='changeCloseEye'>
+      <image src='../../images/openeye@2x.png'></image>
+    </view>
+  </view>
+  <view class='login_err hidden' >请检查手机号码是否正确</view>
+  
+</view>
+
+<button size='default' type='warn' class='cor_sub register_sub' disabled='{{!passWordIsInput}}'>立即修改</button>
+
+<view class='forget_password'>
+  <navigator url=''>忘记密码</navigator>
+</view>
+<view class='sms_login hidden'>
+  <navigator url=''>短信验证码登录</navigator>
+</view>
+

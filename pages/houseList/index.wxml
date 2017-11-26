@@ -1,0 +1,611 @@
+
+<view class=" flex swiper-tab"> 
+  <view class="flex1 swiper-tab-list {{currentTab=='0' ? 'on' : ''}}" data-current="0" data-status="all" bindtap="swichNav">
+    全部
+  </view> 
+  <view class="flex1 swiper-tab-list {{currentTab=='1' ? 'on' : ''}}" data-current="1" data-status="topay" bindtap="swichNav">
+    待审核
+  </view> 
+  <view class="flex1 swiper-tab-list {{currentTab=='2' ? 'on' : ''}}" data-current="2" data-status="tosend" bindtap="swichNav">
+    审核通过
+  </view> 
+  <view class="flex1 swiper-tab-list {{currentTab=='3' ? 'on' : ''}}" data-current="3" data-status="send" bindtap="swichNav">
+    已成交
+  </view>
+  <view class="flex1 swiper-tab-list {{currentTab=='4' ? 'on' : ''}}" data-current="4" data-status="success" bindtap="swichNav">
+    结佣
+  </view> 
+</view> 
+
+<scroll-view scroll-y="true">
+  <view class='house'  wx-if="{{currentTab == 0}}">
+    <view class='house_item'>
+      <view class='item_top'>
+        <text class='item_icon'>售</text>
+        <view class='item_msg'>
+          <text class='item_msg_loc'>1号楼 101室</text>
+          <text class='item_msg_tel'>136-9999-8888</text>
+        </view>
+        <text class='item_suc'>审核通过</text>
+        <view class='line'></view>
+      </view>
+      <view class='item_middle'>
+        <text>看房时间：随时</text>
+        <text>提交时间：2017-10-10 09:55</text>
+      </view>
+      <view class='item_bottom' wx-if='{{drop}}'>
+        <text>审核时间：2017-10-10 09:55</text>
+        <text>签约时间：2017-10-10 09:55</text>
+      </view>
+      <view class='drop' bindtap='drop'  data-drop="drop">
+        <text wx-if='{{drop}}' class='drop_txt'>收起</text>
+        <text wx-if='{{!drop}}' class='drop_txt'>展开</text>
+        <view class='drop_down' wx-if='{{!drop}}'>
+          <image src='../../images/分类@2x.png'></image>
+        </view>
+        <view class='drop_up' wx-if='{{drop}}'>
+          <image src='../../images/分类@2x.png'></image>
+        </view>
+      </view>
+    </view>
+    <view class='house_item'>
+      <view class='item_top'>
+        <text class='item_icon color_wating'>租</text>
+        <view class='item_msg'>
+          <text class='item_msg_loc'>1号楼 101室</text>
+          <text class='item_msg_tel'>136-9999-8888</text>
+        </view>
+        <text class='item_suc color_wating'>待审核</text>
+        <view class='line'></view>
+      </view>
+      <view class='item_middle'>
+        <text>看房时间：随时</text>
+        <text>提交时间：2017-10-10 09:55</text>
+      </view>
+      <view class='item_bottom' wx-if='{{drop1}}'>
+        <text>审核时间：2017-10-10 09:55</text>
+        <text>签约时间：2017-10-10 09:55</text>
+      </view>
+      <view class='drop' bindtap='drop'  data-drop="drop1">
+        <text wx-if='{{drop1}}' class='drop_txt'>收起</text>
+        <text wx-if='{{!drop1}}' class='drop_txt'>展开</text>
+        <view class='drop_down' wx-if='{{!drop1}}'>
+          <image src='../../images/分类@2x.png'></image>
+        </view>
+        <view class='drop_up' wx-if='{{drop1}}'>
+          <image src='../../images/分类@2x.png'></image>
+        </view>
+      </view>
+    </view>
+    <view class='house_item'>
+      <view class='item_top'>
+        <text class='item_icon'>售</text>
+        <view class='item_msg'>
+          <text class='item_msg_loc'>1号楼 101室</text>
+          <text class='item_msg_tel'>136-9999-8888</text>
+        </view>
+        <text class='item_suc color_ok'>可结佣</text>
+        <view class='line'></view>
+      </view>
+      <view class='item_middle'>
+        <text>看房时间：随时</text>
+        <text>提交时间：2017-10-10 09:55</text>
+      </view>
+      <view class='item_bottom' wx-if='{{drop2}}'>
+        <text>审核时间：2017-10-10 09:55</text>
+        <text>签约时间：2017-10-10 09:55</text>
+      </view>
+      <view class='drop' bindtap='drop'  data-drop="drop2">
+        <text wx-if='{{drop2}}' class='drop_txt'>收起</text>
+        <text wx-if='{{!drop2}}' class='drop_txt'>展开</text>
+        <view class='drop_down' wx-if='{{!drop2}}'>
+          <image src='../../images/分类@2x.png'></image>
+        </view>
+        <view class='drop_up' wx-if='{{drop2}}'>
+          <image src='../../images/分类@2x.png'></image>
+        </view>
+      </view>
+    </view>
+    <view class='house_item'>
+      <view class='item_top'>
+        <text class='item_icon'>售</text>
+        <view class='item_msg'>
+          <text class='item_msg_loc'>1号楼 101室</text>
+          <text class='item_msg_tel'>136-9999-8888</text>
+        </view>
+        <text class='item_suc color_fail'>审核不通过</text>
+        <view class='line'></view>
+      </view>
+      <view class='item_middle'>
+        <text>看房时间：随时</text>
+        <text>提交时间：2017-10-10 09:55</text>
+      </view>
+      <view class='item_bottom' wx-if='{{drop3}}'>
+        <text>审核时间：2017-10-10 09:55</text>
+        <text>签约时间：2017-10-10 09:55</text>
+      </view>
+      <view class='drop' bindtap='drop' data-drop="drop3">
+        <text wx-if='{{drop3}}' class='drop_txt'>收起</text>
+        <text wx-if='{{!drop3}}' class='drop_txt'>展开</text>
+        <view class='drop_down' wx-if='{{!drop3}}'>
+          <image src='../../images/分类@2x.png'></image>
+        </view>
+        <view class='drop_up' wx-if='{{drop3}}'>
+          <image src='../../images/分类@2x.png'></image>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='house'  wx-if="{{currentTab == 1}}">
+    <view class='house_item'>
+      <view class='item_top'>
+        <text class='item_icon'>售</text>
+        <view class='item_msg'>
+          <text class='item_msg_loc'>1号楼 101室</text>
+          <text class='item_msg_tel'>136-9999-8888</text>
+        </view>
+        <text class='item_suc color_wating'>待审核</text>
+        <view class='line'></view>
+      </view>
+      <view class='item_middle'>
+        <text>看房时间：随时</text>
+        <text>提交时间：2017-10-10 09:55</text>
+      </view>
+      <view class='item_bottom' wx-if='{{drop}}'>
+        <text>审核时间：2017-10-10 09:55</text>
+        <text>签约时间：2017-10-10 09:55</text>
+      </view>
+      <view class='drop' bindtap='drop'  data-drop="drop">
+        <text wx-if='{{drop}}' class='drop_txt'>收起</text>
+        <text wx-if='{{!drop}}' class='drop_txt'>展开</text>
+        <view class='drop_down' wx-if='{{!drop}}'>
+          <image src='../../images/分类@2x.png'></image>
+        </view>
+        <view class='drop_up' wx-if='{{drop}}'>
+          <image src='../../images/分类@2x.png'></image>
+        </view>
+      </view>
+    </view>
+    <view class='house_item'>
+      <view class='item_top'>
+        <text class='item_icon color_wating'>租</text>
+        <view class='item_msg'>
+          <text class='item_msg_loc'>1号楼 101室</text>
+          <text class='item_msg_tel'>136-9999-8888</text>
+        </view>
+        <text class='item_suc color_wating'>待审核</text>
+        <view class='line'></view>
+      </view>
+      <view class='item_middle'>
+        <text>看房时间：随时</text>
+        <text>提交时间：2017-10-10 09:55</text>
+      </view>
+      <view class='item_bottom' wx-if='{{drop1}}'>
+        <text>审核时间：2017-10-10 09:55</text>
+        <text>签约时间：2017-10-10 09:55</text>
+      </view>
+      <view class='drop' bindtap='drop'  data-drop="drop1">
+        <text wx-if='{{drop1}}' class='drop_txt'>收起</text>
+        <text wx-if='{{!drop1}}' class='drop_txt'>展开</text>
+        <view class='drop_down' wx-if='{{!drop1}}'>
+          <image src='../../images/分类@2x.png'></image>
+        </view>
+        <view class='drop_up' wx-if='{{drop1}}'>
+          <image src='../../images/分类@2x.png'></image>
+        </view>
+      </view>
+    </view>
+    <view class='house_item'>
+      <view class='item_top'>
+        <text class='item_icon'>售</text>
+        <view class='item_msg'>
+          <text class='item_msg_loc'>1号楼 101室</text>
+          <text class='item_msg_tel'>136-9999-8888</text>
+        </view>
+        <text class='item_suc color_wating'>待审核</text>
+        <view class='line'></view>
+      </view>
+      <view class='item_middle'>
+        <text>看房时间：随时</text>
+        <text>提交时间：2017-10-10 09:55</text>
+      </view>
+      <view class='item_bottom' wx-if='{{drop2}}'>
+        <text>审核时间：2017-10-10 09:55</text>
+        <text>签约时间：2017-10-10 09:55</text>
+      </view>
+      <view class='drop' bindtap='drop'  data-drop="drop2">
+        <text wx-if='{{drop2}}' class='drop_txt'>收起</text>
+        <text wx-if='{{!drop2}}' class='drop_txt'>展开</text>
+        <view class='drop_down' wx-if='{{!drop2}}'>
+          <image src='../../images/分类@2x.png'></image>
+        </view>
+        <view class='drop_up' wx-if='{{drop2}}'>
+          <image src='../../images/分类@2x.png'></image>
+        </view>
+      </view>
+    </view>
+    <view class='house_item'>
+      <view class='item_top'>
+        <text class='item_icon'>售</text>
+        <view class='item_msg'>
+          <text class='item_msg_loc'>1号楼 101室</text>
+          <text class='item_msg_tel'>136-9999-8888</text>
+        </view>
+        <text class='item_suc color_wating'>待审核</text>
+        <view class='line'></view>
+      </view>
+      <view class='item_middle'>
+        <text>看房时间：随时</text>
+        <text>提交时间：2017-10-10 09:55</text>
+      </view>
+      <view class='item_bottom' wx-if='{{drop3}}'>
+        <text>审核时间：2017-10-10 09:55</text>
+        <text>签约时间：2017-10-10 09:55</text>
+      </view>
+      <view class='drop' bindtap='drop' data-drop="drop3">
+        <text wx-if='{{drop3}}' class='drop_txt'>收起</text>
+        <text wx-if='{{!drop3}}' class='drop_txt'>展开</text>
+        <view class='drop_down' wx-if='{{!drop3}}'>
+          <image src='../../images/分类@2x.png'></image>
+        </view>
+        <view class='drop_up' wx-if='{{drop3}}'>
+          <image src='../../images/分类@2x.png'></image>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='house'  wx-if="{{currentTab == 2}}">
+    <view class='house_item'>
+      <view class='item_top'>
+        <text class='item_icon'>售</text>
+        <view class='item_msg'>
+          <text class='item_msg_loc'>1号楼 101室</text>
+          <text class='item_msg_tel'>136-9999-8888</text>
+        </view>
+        <text class='item_suc'>审核通过</text>
+        <view class='line'></view>
+      </view>
+      <view class='item_middle'>
+        <text>看房时间：随时</text>
+        <text>提交时间：2017-10-10 09:55</text>
+      </view>
+      <view class='item_bottom' wx-if='{{drop}}'>
+        <text>审核时间：2017-10-10 09:55</text>
+        <text>签约时间：2017-10-10 09:55</text>
+      </view>
+      <view class='drop' bindtap='drop'  data-drop="drop">
+        <text wx-if='{{drop}}' class='drop_txt'>收起</text>
+        <text wx-if='{{!drop}}' class='drop_txt'>展开</text>
+        <view class='drop_down' wx-if='{{!drop}}'>
+          <image src='../../images/分类@2x.png'></image>
+        </view>
+        <view class='drop_up' wx-if='{{drop}}'>
+          <image src='../../images/分类@2x.png'></image>
+        </view>
+      </view>
+    </view>
+    <view class='house_item'>
+      <view class='item_top'>
+        <text class='item_icon color_wating'>租</text>
+        <view class='item_msg'>
+          <text class='item_msg_loc'>1号楼 101室</text>
+          <text class='item_msg_tel'>136-9999-8888</text>
+        </view>
+        <text class='item_suc'>审核通过</text>
+        <view class='line'></view>
+      </view>
+      <view class='item_middle'>
+        <text>看房时间：随时</text>
+        <text>提交时间：2017-10-10 09:55</text>
+      </view>
+      <view class='item_bottom' wx-if='{{drop1}}'>
+        <text>审核时间：2017-10-10 09:55</text>
+        <text>签约时间：2017-10-10 09:55</text>
+      </view>
+      <view class='drop' bindtap='drop'  data-drop="drop1">
+        <text wx-if='{{drop1}}' class='drop_txt'>收起</text>
+        <text wx-if='{{!drop1}}' class='drop_txt'>展开</text>
+        <view class='drop_down' wx-if='{{!drop1}}'>
+          <image src='../../images/分类@2x.png'></image>
+        </view>
+        <view class='drop_up' wx-if='{{drop1}}'>
+          <image src='../../images/分类@2x.png'></image>
+        </view>
+      </view>
+    </view>
+    <view class='house_item'>
+      <view class='item_top'>
+        <text class='item_icon'>售</text>
+        <view class='item_msg'>
+          <text class='item_msg_loc'>1号楼 101室</text>
+          <text class='item_msg_tel'>136-9999-8888</text>
+        </view>
+        <text class='item_suc'>审核通过</text>
+        <view class='line'></view>
+      </view>
+      <view class='item_middle'>
+        <text>看房时间：随时</text>
+        <text>提交时间：2017-10-10 09:55</text>
+      </view>
+      <view class='item_bottom' wx-if='{{drop2}}'>
+        <text>审核时间：2017-10-10 09:55</text>
+        <text>签约时间：2017-10-10 09:55</text>
+      </view>
+      <view class='drop' bindtap='drop'  data-drop="drop2">
+        <text wx-if='{{drop2}}' class='drop_txt'>收起</text>
+        <text wx-if='{{!drop2}}' class='drop_txt'>展开</text>
+        <view class='drop_down' wx-if='{{!drop2}}'>
+          <image src='../../images/分类@2x.png'></image>
+        </view>
+        <view class='drop_up' wx-if='{{drop2}}'>
+          <image src='../../images/分类@2x.png'></image>
+        </view>
+      </view>
+    </view>
+    <view class='house_item'>
+      <view class='item_top'>
+        <text class='item_icon'>售</text>
+        <view class='item_msg'>
+          <text class='item_msg_loc'>1号楼 101室</text>
+          <text class='item_msg_tel'>136-9999-8888</text>
+        </view>
+        <text class='item_suc'>审核通过</text>
+        <view class='line'></view>
+      </view>
+      <view class='item_middle'>
+        <text>看房时间：随时</text>
+        <text>提交时间：2017-10-10 09:55</text>
+      </view>
+      <view class='item_bottom' wx-if='{{drop3}}'>
+        <text>审核时间：2017-10-10 09:55</text>
+        <text>签约时间：2017-10-10 09:55</text>
+      </view>
+      <view class='drop' bindtap='drop' data-drop="drop3">
+        <text wx-if='{{drop3}}' class='drop_txt'>收起</text>
+        <text wx-if='{{!drop3}}' class='drop_txt'>展开</text>
+        <view class='drop_down' wx-if='{{!drop3}}'>
+          <image src='../../images/分类@2x.png'></image>
+        </view>
+        <view class='drop_up' wx-if='{{drop3}}'>
+          <image src='../../images/分类@2x.png'></image>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='house'  wx-if="{{currentTab == 3}}">
+    <view class='house_item'>
+      <view class='item_top'>
+        <text class='item_icon'>售</text>
+        <view class='item_msg'>
+          <text class='item_msg_loc'>1号楼 101室</text>
+          <text class='item_msg_tel'>136-9999-8888</text>
+        </view>
+        <text class='item_suc color_ok'>可结佣</text>
+        <view class='line'></view>
+      </view>
+      <view class='item_middle'>
+        <text>看房时间：随时</text>
+        <text>提交时间：2017-10-10 09:55</text>
+      </view>
+      <view class='item_bottom' wx-if='{{drop}}'>
+        <text>审核时间：2017-10-10 09:55</text>
+        <text>签约时间：2017-10-10 09:55</text>
+      </view>
+      <view class='drop' bindtap='drop'  data-drop="drop">
+        <text wx-if='{{drop}}' class='drop_txt'>收起</text>
+        <text wx-if='{{!drop}}' class='drop_txt'>展开</text>
+        <view class='drop_down' wx-if='{{!drop}}'>
+          <image src='../../images/分类@2x.png'></image>
+        </view>
+        <view class='drop_up' wx-if='{{drop}}'>
+          <image src='../../images/分类@2x.png'></image>
+        </view>
+      </view>
+    </view>
+    <view class='house_item'>
+      <view class='item_top'>
+        <text class='item_icon color_wating'>租</text>
+        <view class='item_msg'>
+          <text class='item_msg_loc'>1号楼 101室</text>
+          <text class='item_msg_tel'>136-9999-8888</text>
+        </view>
+        <text class='item_suc color_ok'>可结佣</text>
+        <view class='line'></view>
+      </view>
+      <view class='item_middle'>
+        <text>看房时间：随时</text>
+        <text>提交时间：2017-10-10 09:55</text>
+      </view>
+      <view class='item_bottom' wx-if='{{drop1}}'>
+        <text>审核时间：2017-10-10 09:55</text>
+        <text>签约时间：2017-10-10 09:55</text>
+      </view>
+      <view class='drop' bindtap='drop'  data-drop="drop1">
+        <text wx-if='{{drop1}}' class='drop_txt'>收起</text>
+        <text wx-if='{{!drop1}}' class='drop_txt'>展开</text>
+        <view class='drop_down' wx-if='{{!drop1}}'>
+          <image src='../../images/分类@2x.png'></image>
+        </view>
+        <view class='drop_up' wx-if='{{drop1}}'>
+          <image src='../../images/分类@2x.png'></image>
+        </view>
+      </view>
+    </view>
+    <view class='house_item'>
+      <view class='item_top'>
+        <text class='item_icon'>售</text>
+        <view class='item_msg'>
+          <text class='item_msg_loc'>1号楼 101室</text>
+          <text class='item_msg_tel'>136-9999-8888</text>
+        </view>
+        <text class='item_suc color_ok'>可结佣</text>
+        <view class='line'></view>
+      </view>
+      <view class='item_middle'>
+        <text>看房时间：随时</text>
+        <text>提交时间：2017-10-10 09:55</text>
+      </view>
+      <view class='item_bottom' wx-if='{{drop2}}'>
+        <text>审核时间：2017-10-10 09:55</text>
+        <text>签约时间：2017-10-10 09:55</text>
+      </view>
+      <view class='drop' bindtap='drop'  data-drop="drop2">
+        <text wx-if='{{drop2}}' class='drop_txt'>收起</text>
+        <text wx-if='{{!drop2}}' class='drop_txt'>展开</text>
+        <view class='drop_down' wx-if='{{!drop2}}'>
+          <image src='../../images/分类@2x.png'></image>
+        </view>
+        <view class='drop_up' wx-if='{{drop2}}'>
+          <image src='../../images/分类@2x.png'></image>
+        </view>
+      </view>
+    </view>
+    <view class='house_item'>
+      <view class='item_top'>
+        <text class='item_icon'>售</text>
+        <view class='item_msg'>
+          <text class='item_msg_loc'>1号楼 101室</text>
+          <text class='item_msg_tel'>136-9999-8888</text>
+        </view>
+        <text class='item_suc color_ok'>可结佣</text>
+        <view class='line'></view>
+      </view>
+      <view class='item_middle'>
+        <text>看房时间：随时</text>
+        <text>提交时间：2017-10-10 09:55</text>
+      </view>
+      <view class='item_bottom' wx-if='{{drop3}}'>
+        <text>审核时间：2017-10-10 09:55</text>
+        <text>签约时间：2017-10-10 09:55</text>
+      </view>
+      <view class='drop' bindtap='drop' data-drop="drop3">
+        <text wx-if='{{drop3}}' class='drop_txt'>收起</text>
+        <text wx-if='{{!drop3}}' class='drop_txt'>展开</text>
+        <view class='drop_down' wx-if='{{!drop3}}'>
+          <image src='../../images/分类@2x.png'></image>
+        </view>
+        <view class='drop_up' wx-if='{{drop3}}'>
+          <image src='../../images/分类@2x.png'></image>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='house'  wx-if="{{currentTab == 4}}">
+    <view class='house_item'>
+      <view class='item_top'>
+        <text class='item_icon'>售</text>
+        <view class='item_msg'>
+          <text class='item_msg_loc'>1号楼 101室</text>
+          <text class='item_msg_tel'>136-9999-8888</text>
+        </view>
+        <text class='item_suc color_ok'>可结佣</text>
+        <view class='line'></view>
+      </view>
+      <view class='item_middle'>
+        <text>看房时间：随时</text>
+        <text>提交时间：2017-10-10 09:55</text>
+      </view>
+      <view class='item_bottom' wx-if='{{drop}}'>
+        <text>审核时间：2017-10-10 09:55</text>
+        <text>签约时间：2017-10-10 09:55</text>
+      </view>
+      <view class='drop' bindtap='drop'  data-drop="drop">
+        <text wx-if='{{drop}}' class='drop_txt'>收起</text>
+        <text wx-if='{{!drop}}' class='drop_txt'>展开</text>
+        <view class='drop_down' wx-if='{{!drop}}'>
+          <image src='../../images/分类@2x.png'></image>
+        </view>
+        <view class='drop_up' wx-if='{{drop}}'>
+          <image src='../../images/分类@2x.png'></image>
+        </view>
+      </view>
+    </view>
+    <view class='house_item'>
+      <view class='item_top'>
+        <text class='item_icon color_wating'>租</text>
+        <view class='item_msg'>
+          <text class='item_msg_loc'>1号楼 101室</text>
+          <text class='item_msg_tel'>136-9999-8888</text>
+        </view>
+        <text class='item_suc color_ok'>可结佣</text>
+        <view class='line'></view>
+      </view>
+      <view class='item_middle'>
+        <text>看房时间：随时</text>
+        <text>提交时间：2017-10-10 09:55</text>
+      </view>
+      <view class='item_bottom' wx-if='{{drop1}}'>
+        <text>审核时间：2017-10-10 09:55</text>
+        <text>签约时间：2017-10-10 09:55</text>
+      </view>
+      <view class='drop' bindtap='drop'  data-drop="drop1">
+        <text wx-if='{{drop1}}' class='drop_txt'>收起</text>
+        <text wx-if='{{!drop1}}' class='drop_txt'>展开</text>
+        <view class='drop_down' wx-if='{{!drop1}}'>
+          <image src='../../images/分类@2x.png'></image>
+        </view>
+        <view class='drop_up' wx-if='{{drop1}}'>
+          <image src='../../images/分类@2x.png'></image>
+        </view>
+      </view>
+    </view>
+    <view class='house_item'>
+      <view class='item_top'>
+        <text class='item_icon'>售</text>
+        <view class='item_msg'>
+          <text class='item_msg_loc'>1号楼 101室</text>
+          <text class='item_msg_tel'>136-9999-8888</text>
+        </view>
+        <text class='item_suc color_ok'>可结佣</text>
+        <view class='line'></view>
+      </view>
+      <view class='item_middle'>
+        <text>看房时间：随时</text>
+        <text>提交时间：2017-10-10 09:55</text>
+      </view>
+      <view class='item_bottom' wx-if='{{drop2}}'>
+        <text>审核时间：2017-10-10 09:55</text>
+        <text>签约时间：2017-10-10 09:55</text>
+      </view>
+      <view class='drop' bindtap='drop'  data-drop="drop2">
+        <text wx-if='{{drop2}}' class='drop_txt'>收起</text>
+        <text wx-if='{{!drop2}}' class='drop_txt'>展开</text>
+        <view class='drop_down' wx-if='{{!drop2}}'>
+          <image src='../../images/分类@2x.png'></image>
+        </view>
+        <view class='drop_up' wx-if='{{drop2}}'>
+          <image src='../../images/分类@2x.png'></image>
+        </view>
+      </view>
+    </view>
+    <view class='house_item'>
+      <view class='item_top'>
+        <text class='item_icon'>售</text>
+        <view class='item_msg'>
+          <text class='item_msg_loc'>1号楼 101室</text>
+          <text class='item_msg_tel'>136-9999-8888</text>
+        </view>
+        <text class='item_suc color_ok'>可结佣</text>
+        <view class='line'></view>
+      </view>
+      <view class='item_middle'>
+        <text>看房时间：随时</text>
+        <text>提交时间：2017-10-10 09:55</text>
+      </view>
+      <view class='item_bottom' wx-if='{{drop3}}'>
+        <text>审核时间：2017-10-10 09:55</text>
+        <text>签约时间：2017-10-10 09:55</text>
+      </view>
+      <view class='drop' bindtap='drop' data-drop="drop3">
+        <text wx-if='{{drop3}}' class='drop_txt'>收起</text>
+        <text wx-if='{{!drop3}}' class='drop_txt'>展开</text>
+        <view class='drop_down' wx-if='{{!drop3}}'>
+          <image src='../../images/分类@2x.png'></image>
+        </view>
+        <view class='drop_up' wx-if='{{drop3}}'>
+          <image src='../../images/分类@2x.png'></image>
+        </view>
+      </view>
+    </view>
+  </view>
+</scroll-view>

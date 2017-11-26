@@ -1,0 +1,51 @@
+<view class='add_cus'>
+  <view class='tips' wx-if="{{tipsShow}}">
+    <image class='tips_left' src='../../images/超时警示 copy@2x.png'></image>
+    <text>请注意！添加新的线索客户，如提交显示成功。该新增客户的保护期为10个自然日</text>
+    <image class='tips_right' src='../../images/close_icon@2x.png' bindtap='closeTips'></image>
+  </view>
+
+  <view class='cus_msg'>
+    <view class='rl_title'>客户信息</view>
+      <view class='rl_content_box'>
+        <view class='rl_content rl_shadow'>
+          <text class='flex3' decode="true">姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名：</text>
+          <input data-key="value1" class='flex6' bindinput="checkout" type='text' placeholder='请输入您的姓名'></input>
+          <view class='cus_right'>
+            <text class="man {{sex=='0' ? 'on' : ''}}" bindtap='changeMan'>先生</text>
+            <text class="lady {{sex=='1' ? 'on' : ''}}" bindtap='changeLady'>女士</text>
+          </view>
+        </view>
+        <view class='rl_content rl_shadow'>
+          <text class='flex3' decode="true">类&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;型：</text>
+          <view class='cus_type'>
+            <text class="rent {{buyType=='0' ? 'on' : ''}}" bindtap='changeRent'>租房</text>
+            <text class="buy {{buyType=='1' ? 'on' : ''}}" bindtap='changeBuy'>买房</text>
+          </view>
+        </view>
+
+        <view class='rl_content rl_shadow'>
+          <text class='flex3' decode="true">手&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;机：</text>
+          <input data-key="value2" maxlength='11' class='flex9' bindinput="checkout" type='text' placeholder='请输入11位手机号'></input>
+        </view>
+
+        <view class='rl_content rl_shadow' bindtap='goToLoc'>
+          <text class='flex3' decode="true">客户归属：</text>
+          <text class='flex9'>{{value3}}</text>
+          <image class='more' src="../../images/智能报价@2x.png"></image>
+        </view>
+
+        <view class='rl_content rl_shadow'>
+          <text class='flex3' decode="true">其他备注：</text>
+          <input  class='flex9' type='text' placeholder='请输入备注信息' ></input>
+        </view>
+      </view>
+  </view>
+
+    <view class='agree {{checked}}' bindtap='checkAgree'>
+      <text class='icon'></text>
+      <text class='txt'>同意协议</text>
+    </view>
+
+    <button type='warn' class='submit' disabled='{{disabled}}'>立即提交</button>
+</view>

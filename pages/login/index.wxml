@@ -1,0 +1,64 @@
+<view class='login' wx-if='{{isOpen && !isRegister}}'>
+  <view class="login_slogan">服务,让社区更美好</view>
+  <view class="login_wel">Welcome to your</view>
+  <view class="login_com">Community</view>
+  <view class="login_img">
+    <image src='../../images/bg_icon@2x.png'></image>
+  </view>
+
+  <view class="login_input">
+    <input placeholder='请输入手机号码' type='text' maxlength='11' bindinput='ipt_num'/>
+    <view class='login_ipt_icon err' wx-if="{{!isPhoneNum}}">
+      <image src='../../images/wenhao@2x.png'></image>
+    </view>
+    <view class='login_ipt_icon cor' wx-if="{{isPhoneNum}}">
+      <image src='../../images/duihao@2x.png'></image>
+    </view>
+  </view>
+  <view class='login_err' wx-if="{{!isPhoneNum && !isRegister}}">请检查手机号码是否正确</view>
+  
+</view>
+
+<button wx-if='{{isOpen && !isRegister}}' size='default' type='warn' class='cor_sub' disabled='{{!isPhoneNum}}' bindtap='goToRegister'>确定</button>
+
+<view wx-if='{{!isOpen}}' class='login_fail'>
+  <view class='login_fail_img'>
+    <image src='../../images/shiliu@2x.png'></image>
+  </view>
+  <text class='fail_text'>您的账号未开通</text>
+  <text class='fail_text fail_1'>请联系物业房屋管家!</text>
+  <button class='login_tel' size='default' type='warn' bindtap='calling'>
+    <image src='../../images/phone@2x.png'></image>
+    <text>物业房屋管家</text>
+  </button>
+</view>
+
+
+<view class='login register' wx-if='{{isRegister}}'>
+  <view class="login_slogan">您已注册，请登录</view>
+
+  <view class='register_phone'>
+    <text>{{phoneNum}}</text>
+  </view>
+  <view class="login_input">
+    <input placeholder='请输入登录密码' type='text' password='{{!isOpenEye}}'  maxlength='11' bindinput='ipt_pass_word'/>
+    <view class='login_ipt_icon err' wx-if="{{!isOpenEye}}" bindtap='changeOpenEye'>
+      <image src='../../images/closeeye@2x.png'></image>
+    </view>
+    <view class='login_ipt_icon cor' wx-if="{{isOpenEye}}" bindtap='changeCloseEye'>
+      <image src='../../images/openeye@2x.png'></image>
+    </view>
+  </view>
+  <view class='login_err' wx-if="{{!isPhoneNum && !isRegister}}">请检查手机号码是否正确</view>
+  
+</view>
+
+<button wx-if='{{isRegister}}' size='default' type='warn' class='cor_sub register_sub' disabled='{{!passWordIsInput}}'>登录</button>
+
+<view class='forget_password' wx-if='{{isRegister}}'>
+  <navigator url='../forgetPassword/index'>忘记密码</navigator>
+</view>
+<view class='sms_login' wx-if='{{isRegister}}'>
+  <navigator url='../smsRegister/index'>短信验证码登录</navigator>
+</view>
+

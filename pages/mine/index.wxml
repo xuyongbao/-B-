@@ -1,0 +1,44 @@
+<view class='header'>
+  <view class='header_left' bindtap='upDataPic'>
+    <image src='../../images/我@2x.png'></image>
+  </view>
+  <view class='header_right'>
+    <text class='header_name'>尹捷</text>
+    <text class='header_sex'>女士</text>
+    <text class='header_tel'>13910001000</text>
+  </view>
+</view>
+<view class='lan'></view>
+
+<view class='cell'>
+  <image class='cell_icon' src='../../images/wygs_icon@2x.png'></image>
+  <text class='cell_title'>物业公司</text>
+  <text class='cell_txt'>上海长城物业有限公司</text>
+</view>
+
+<view class='detail'>
+  <view class='detail_title'>
+    <image src='../../images/bdxq_icon@2x.png'></image>
+    <text>绑定小区</text>
+  </view>
+
+  <view class='cell_item'>
+    <text>上海</text>
+    <text>普陀</text>
+    <text>绿地米兰公馆</text>
+    <image src='../../images/wyfwgj-icon@2x.png'></image>
+  </view>
+  <view class='cell_item'>
+    <text>上海</text>
+    <text>普陀</text>
+    <text>绿地米兰公馆</text>
+    <image src='../../images/wyfwgj-icon@2x.png'></image>
+  </view>
+
+  <view class='tips'>
+    <image src='../../images/ts@2x.png'></image>
+    <text>如修改绑定小区，请联系物业房屋管家</text>
+  </view>
+  
+  <button type='default' class='change'>切换账号</button>
+</view>

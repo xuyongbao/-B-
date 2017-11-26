@@ -1,0 +1,55 @@
+<view class="search">
+  <view>
+    <icon type='search' size="12" color='#666'></icon>
+    <input type='text' confirm-type='search' placeholder='请输入城市中文名称或拼音' placeholder-style='#ccc'></input>
+  </view>
+</view>
+
+<scroll-view scroll-y="true" style="height: {{winHeight}}px;" scroll-into-view="{{scrollTopId}}" class="city_list">
+    <view class='location'>
+      <text class='loc_title'>定位城市</text>
+      <view class='loc_txt'>
+        <text class='loc_l'>上海</text>
+        <text class='loc_g'>GPS定位</text>
+      </view>
+    </view>
+    <view class='hot_city'>
+      <block wx:for="{{city}}" wx:for-index="idx" wx:for-item="cityName">
+        <block wx:if="{{idx == '热门城市'}}">
+          <text id="{{idx}}" class="loc_title">{{idx}}</text>
+          <view class='hot_list'>
+            <block >
+              <text wx:for="{{cityName}}" class="list_item">{{item.name}}</text>
+            </block>
+          </view>
+        </block>
+      </block>
+    </view>
+
+    <block wx:for="{{city}}" wx:for-index="idx" wx:for-item="cityName">
+      <block wx:if="{{idx != '热门城市'}}">
+        <text id="{{idx}}" class="list_tit">{{idx}}</text>
+        <block wx:for="{{cityName}}">
+          <view class="list_con">{{item.name}}</view>
+        </block>
+      </block>
+    </block>
+</scroll-view>
+<!--城市选择列表-->
+<view class="scroll_list" 
+      bindtouchstart="chStart"
+      bindtouchend="chEnd"
+      catchtouchmove="chMove"
+      style="background: rgba(0,0,0,{{trans}});"
+      >
+   <block wx:for="{{city}}" wx:for-index="idx" wx:for-item="cityName">
+      <block wx:if="{{idx != '热门城市'}}">
+       <view id="{{idx}}" class="scroll_list_chi" style="line-height:{{lineHeight}}px ; height:{{lineHeight}}px ;font-size:{{lineHeight/1.7}}px;" bindtouchstart="getWords" bindtouchend="setWords">{{idx}}</view>
+      </block>
+    </block>
+</view>
+
+<!--选择显示-->
+<view hidden="{{hidden}}" class="showwords">
+  {{showwords}}
+</view>

@@ -1,0 +1,136 @@
+.header{
+  height:210rpx;
+  width:750rpx;
+}
+.header_left{
+  padding-top:30rpx;
+  width:150rpx;
+  height:150rpx;
+  margin-left:30rpx;
+  float:left;
+}
+.header_right{
+  float:left;
+  margin-left:30rpx;
+  padding-top:59rpx;
+}
+.header_name,.header_sex{
+  font-family: PingFangSC-Regular;
+  font-size: 32rpx;
+  color: #000000;
+  margin-right:10rpx;
+  height:46rpx;
+  line-height: 46rpx;
+}
+.header_tel{
+  display: block;
+  font-family: PingFangSC-Regular;
+  font-size: 28rpx;
+  color: #999999;
+  height:40rpx;
+  line-height: 40rpx;
+  margin-top:6rpx;
+}
+.lan{
+  height:20rpx;
+  width:750rpx;
+  background: #F9F9F9;
+}
+.cell{
+  height:100rpx;
+  width:750rpx;
+  border-bottom: 1rpx solid #E4E4E4;
+}
+.cell_icon{
+  float:left;
+  height:36rpx;
+  width:36rpx;
+  line-height: 36rpx;
+  margin:32rpx 18rpx 0 30rpx;
+}
+.cell_title,.cell_txt{
+  float:left;
+  height:40rpx;
+  font-family: PingFangSC-Regular;
+  font-size: 28rpx;
+  color: #333333;
+  margin:30rpx 0;
+  line-height: 40rpx;
+}
+.cell_txt{
+  float:right;
+  margin-right:30rpx;
+  color:#999;
+}
+.detail_title{
+  height:40rpx;
+  line-height: 40rpx;
+  margin-top:30rpx;
+  padding-bottom:10rpx;
+}
+.detail_title image{
+  height:36rpx;
+  width:36rpx;
+  margin:2rpx 18rpx 0 30rpx;
+  float:left;
+}
+.detail_title text{
+  font-family: PingFangSC-Regular;
+  font-size: 28rpx;
+  color: #333333;
+  height:40rpx;
+  float:left;
+}
+.cell_item{
+  height:90rpx;
+  width:690rpx;
+  margin-left:30rpx;
+  margin-top:20rpx;
+  font-family: PingFangSC-Regular;
+  font-size: 28rpx;
+  color: #333333;
+  line-height: 90rpx;
+  background: #F4F4F4;
+  border-radius: 10rpx;
+}
+.cell_item text , .cell_item image{
+  float:left;
+}
+.cell_item text {
+  margin-left:30rpx;
+}
+.cell_item image{
+  float:right;
+  margin-right:39rpx;
+  height:52rpx;
+  width:52rpx;
+  margin-top:19rpx;
+}
+.tips{
+  height:30rpx;
+  line-height: 30rpx;
+  font-family: PingFangSC-Regular;
+  font-size: 24rpx;
+  color: #999999;
+  margin-top:30rpx;
+}
+.tips image{
+  float:left;
+  height:24rpx;
+  width:24rpx;
+  margin:3rpx 10rpx 0 30rpx;
+}
+.tips text{
+  float:left;
+}
+.change{
+  width:690rpx;
+  position: fixed;
+  bottom:180rpx;
+  left:30rpx;
+  height:90rpx;
+  line-height: 90rpx;
+  font-family: PingFangSC-Regular;
+  font-size: 32rpx;
+  color: #999!important;
+}

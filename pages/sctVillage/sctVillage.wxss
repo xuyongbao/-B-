@@ -1,0 +1,85 @@
+/* pages/sctVillage/sctVillage.wxss */
+.vlSc_box{
+  padding: 16rpx 0;
+  background: #FAFAFA;
+}
+.vlSc_top{
+  display: flex;
+  margin: 0 16rpx 16rpx;
+  background: #fff;
+  padding: 12rpx 0 11rpx;
+  border-radius: 10rpx;
+}
+.vlSc_top .city_result{
+  flex: 3;
+  text-align: center;
+}
+.vlSc_top .city_result view{
+  color: #333;
+  display: inline;
+  font-size: 24rpx;
+  vertical-align: middle;
+}
+.vlSc_top input{
+  flex: 9;
+  height: 30rpx;
+  font-size: 24rpx;
+  line-height: 30rpx;
+  padding-left: 30rpx;
+  border-left: 2rpx solid #D8D8D8;
+}
+.city_result .tip{
+  margin-left: 20rpx;
+  border: 9rpx solid rgba(0,0,0,0);
+  border-top: 9rpx solid #9B9B9B;
+}
+.vlSc_main{
+  background: #fff;
+}
+.vlSc_li{
+  margin: 0 30rpx;
+  padding: 30rpx 0;
+  border-bottom: 1px solid #E4E4E4;
+}
+.vlSc_li:nth-last-child(1){
+  border-bottom: none;
+}
+.vlSc_li .top{
+  position: relative;
+}
+.vlSc_li .top .name{
+  color: #333;
+  font-size: 28rpx;
+}
+.vlSc_li .name image{
+  width: 38rpx;
+  height: 38rpx;
+  margin-right: 4rpx;
+  vertical-align: middle;
+}
+.vlSc_li .top .distance{
+  position: absolute;
+  right: 72rpx;
+  top: 4rpx;
+  color: #666;
+  font-size: 24rpx;
+}
+.vlSc_li .address{
+  margin-top: 20rpx;
+  position: relative;
+  padding-left: 46rpx;
+}
+.vlSc_li .address text{
+  width: 90%;
+  color: #666;
+  font-size: 24rpx;
+  line-height: 38rpx;
+}
+.vlSc_li .address .more{
+  position: absolute;
+  right: 0;
+  top: -1rpx;
+  width: 48rpx;
+  height: 48rpx;
+  display: block;
+}

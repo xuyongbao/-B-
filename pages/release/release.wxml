@@ -1,0 +1,59 @@
+<!--pages/release/release.wxml-->
+<view class='rl_box'>
+  <view class='rl_list'>
+    <block>
+      <view class='rl_title'>小区信息</view>
+      <view class='rl_content_box'>
+        <view class='rl_content rl_shadow'>
+          <text class='flex3'>小区名称：</text>
+          <text class='flex9' data-key="value1">{{value1}}</text>
+          <image class='more' src="../../images/智能报价@2x.png"></image>
+        </view>
+      </view>
+    </block>
+
+    <block>
+      <view class='rl_title'>房源信息</view>
+      <view class='rl_content_box'>
+        <view class='rl_content'>
+          <text class='flex3' decode="true">楼&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;栋：</text>
+          <input data-key="value2" class='flex9' bindinput="checkout" type='text' placeholder='请输入楼栋'></input>
+        </view>
+        <view class='rl_content'>
+          <text class='flex3' decode="true">室&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;号：</text>
+          <input data-key="value3" class='flex9' bindinput="checkout" type='text' placeholder='请输入室号'></input>
+        </view>
+      </view>
+    </block>
+
+    <block>
+      <view class='rl_title'>联系人信息</view>
+      <view class='rl_content_box'>
+        <view class='rl_content'>
+          <text class='flex3'>手机号码：</text>
+          <input class='flex9' maxlength='11' data-key="value4" bindinput="checkout" type='text' placeholder='请输入联系人手机号码'></input>
+        </view>
+        <view class='rl_content'>
+          <text class='flex3'>看房时间：</text>
+          <view class="pickerTxt flex9" bindtap="timeSelect" data-key="value5">{{timeArray[timeIndex]}}</view>
+
+          <image class='more' src="../../images/智能报价@2x.png"></image>
+        </view>
+        <view class='rl_content'>
+          <text class='flex3'>其他备注：</text>
+          <input class='flex9' data-key="value6"  bindinput="checkout" type='text' placeholder='请输入备注信息'></input>
+        </view>
+      </view>
+    </block>
+  </view>
+
+  <view class='agree {{checkecd}}' bindtap='checkAgree'>
+    <text class='icon'></text>
+    <text class='txt'>同意协议</text>
+  </view>
+
+  <view class='rl_btn'>
+    <button type='warn' disabled='{{disabled}}' bindtap='submit'>立即提交</button>
+  </view>
+</view>
+

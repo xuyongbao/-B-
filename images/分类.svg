@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46.2 (44496) - http://www.bohemiancoding.com/sketch -->
+    <title>分类</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1-Copy-2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="房源列表－绑定1个小区" transform="translate(-390.000000, -1299.000000)">
+            <g id="Group-2-Copy-3" transform="translate(330.000000, 1294.000000)">
+                <g id="分类" transform="translate(75.000000, 20.000000) scale(1, -1) translate(-75.000000, -20.000000) translate(60.000000, 5.000000)">
+                    <rect id="占位符" x="1" y="3" width="25" height="25"></rect>
+                    <g id="箭头" transform="translate(15.000000, 15.000000) scale(1, -1) rotate(-270.000000) translate(-15.000000, -15.000000) translate(11.000000, 9.000000)" fill-rule="nonzero" fill="#666666">
+                        <path d="M0.916527218,0.112333221 L7.16771673,4.92533187 C7.60220262,5.25979953 7.60220262,5.98498484 7.16771673,6.31946765 L0.916527218,11.1324663 C0.513810484,11.4425691 0.0101612903,11.054717 0.0101461694,10.4344508 L0.0101461694,0.809393531 C0.0101461694,0.190082547 0.513795363,-0.197799865 0.916512097,0.112318059 L0.916512097,0.112318059 L0.916527218,0.112333221 Z" id="Shape" transform="translate(3.751864, 5.622383) scale(-1, 1) translate(-3.751864, -5.622383) "></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

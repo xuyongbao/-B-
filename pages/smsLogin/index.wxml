@@ -1,0 +1,26 @@
+<view class='login register'>
+  <view class="login_slogan">您已注册，请登录</view>
+
+  <view class='register_phone'>
+    <text>{{phoneNum}}</text>
+  </view>
+  <view class="login_input">
+    <input placeholder='请输入登录密码' type='text'   maxlength='11' bindinput='ipt_pass_word'/>
+
+    <view class='send_sms' bindtap='getSms' wx-if='{{!isSend}}'>获取验证码</view>
+    <view class='send_sms_end'  wx-if='{{isSend}}'>{{time}}s 重新获取</view>
+    
+  </view>
+  <view class='login_err hidden' wx-if="{{!isPhoneNum && !isRegister}}">请检查手机号码是否正确</view>
+  
+</view>
+
+<button size='default' type='warn' class='cor_sub register_sub' disabled='{{!passWordIsInput}}'>登录</button>
+
+<view class='forget_password'>
+  <navigator url=''>忘记密码</navigator>
+</view>
+<view class='sms_login'>
+  <navigator url='' open-type='navigateBack'>密码登录</navigator>
+</view>
+

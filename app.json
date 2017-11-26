@@ -1,0 +1,62 @@
+{
+  "pages":[
+    "pages/login/index",
+    "pages/release/release",
+    "pages/index/index",
+    "pages/addCustomer/index",
+    "pages/houseList/index",
+    "pages/customerList/index",
+    "pages/cityList/index",
+    "pages/mine/index",
+    "pages/register/index",
+    "pages/forgetPassword/index",
+    "pages/smsLogin/index",
+    "pages/sctVillage/sctVillage",
+    "pages/sale/sale"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#F9F9F9",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "color": "#676767",
+    "selectedColor": "#dd4043",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "images/home_def@2x.png",
+        "selectedIconPath": "images/home_sel@2x.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/customerList/index",
+        "iconPath": "images/mine_def@2x.png",
+        "selectedIconPath": "images/mine_sel@2x.png",
+        "text": "客户"
+      },
+      {
+        "pagePath": "pages/houseList/index",
+        "iconPath": "images/mine_def@2x.png",
+        "selectedIconPath": "images/mine_sel@2x.png",
+        "text": "房源"
+      },
+      {
+        "pagePath": "pages/mine/index",
+        "iconPath": "images/mine_def@2x.png",
+        "selectedIconPath": "images/mine_sel@2x.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "connectSocket": 10000,
+    "uploadFile": 10000,
+    "downloadFile": 10000
+  },
+  "debug": false
+}
