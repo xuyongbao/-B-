@@ -1,18 +1,18 @@
 {
   "pages":[
-    "pages/login/index",
-    "pages/release/release",
     "pages/index/index",
+    "pages/release/release",
+    "pages/sctVillage/sctVillage",
+    "pages/cityList/index",
+    "pages/login/index",
+    "pages/mine/index",
     "pages/addCustomer/index",
+    "pages/sale/sale",
     "pages/houseList/index",
     "pages/customerList/index",
-    "pages/cityList/index",
-    "pages/mine/index",
     "pages/register/index",
     "pages/forgetPassword/index",
-    "pages/smsLogin/index",
-    "pages/sctVillage/sctVillage",
-    "pages/sale/sale"
+    "pages/smsLogin/index"
   ],
   "window":{
     "backgroundTextStyle":"light",

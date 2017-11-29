@@ -380,7 +380,7 @@
           <text class='item_msg_loc'>1号楼 101室</text>
           <text class='item_msg_tel'>136-9999-8888</text>
         </view>
-        <text class='item_suc color_ok'>可结佣</text>
+        <text class='item_suc color_ok'>已成交</text>
         <view class='line'></view>
       </view>
       <view class='item_middle'>
@@ -409,7 +409,7 @@
           <text class='item_msg_loc'>1号楼 101室</text>
           <text class='item_msg_tel'>136-9999-8888</text>
         </view>
-        <text class='item_suc color_ok'>可结佣</text>
+        <text class='item_suc color_ok'>已成交</text>
         <view class='line'></view>
       </view>
       <view class='item_middle'>
@@ -438,7 +438,7 @@
           <text class='item_msg_loc'>1号楼 101室</text>
           <text class='item_msg_tel'>136-9999-8888</text>
         </view>
-        <text class='item_suc color_ok'>可结佣</text>
+        <text class='item_suc color_ok'>已成交</text>
         <view class='line'></view>
       </view>
       <view class='item_middle'>
@@ -467,7 +467,7 @@
           <text class='item_msg_loc'>1号楼 101室</text>
           <text class='item_msg_tel'>136-9999-8888</text>
         </view>
-        <text class='item_suc color_ok'>可结佣</text>
+        <text class='item_suc color_ok'>已成交</text>
         <view class='line'></view>
       </view>
       <view class='item_middle'>
@@ -498,7 +498,7 @@
           <text class='item_msg_loc'>1号楼 101室</text>
           <text class='item_msg_tel'>136-9999-8888</text>
         </view>
-        <text class='item_suc color_ok'>可结佣</text>
+        <text class='item_suc color_pay'>可结佣</text>
         <view class='line'></view>
       </view>
       <view class='item_middle'>
@@ -527,7 +527,7 @@
           <text class='item_msg_loc'>1号楼 101室</text>
           <text class='item_msg_tel'>136-9999-8888</text>
         </view>
-        <text class='item_suc color_ok'>可结佣</text>
+        <text class='item_suc color_pay'>可结佣</text>
         <view class='line'></view>
       </view>
       <view class='item_middle'>
@@ -556,7 +556,7 @@
           <text class='item_msg_loc'>1号楼 101室</text>
           <text class='item_msg_tel'>136-9999-8888</text>
         </view>
-        <text class='item_suc color_ok'>可结佣</text>
+        <text class='item_suc color_pay'>可结佣</text>
         <view class='line'></view>
       </view>
       <view class='item_middle'>
@@ -585,7 +585,7 @@
           <text class='item_msg_loc'>1号楼 101室</text>
           <text class='item_msg_tel'>136-9999-8888</text>
         </view>
-        <text class='item_suc color_ok'>可结佣</text>
+        <text class='item_suc color_pay'>可结佣</text>
         <view class='line'></view>
       </view>
       <view class='item_middle'>

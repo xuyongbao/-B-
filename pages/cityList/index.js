@@ -4,7 +4,8 @@ var endWords = "";
  var isNum ;
 Page({
     data: {
-        "hidden":true
+        "hidden":true,
+        searchString:""
     },
     onLoad: function (options) {
         // 生命周期函数--监听页面加载
@@ -39,6 +40,25 @@ Page({
     onUnload: function () {
         // 生命周期函数--监听页面卸载
 
+    },
+    getCityName:function(event){
+      console.log(event.currentTarget.dataset.city);
+      getApp().globalData.location.cityName = event.currentTarget.dataset.city;
+      wx.navigateBack({
+        
+      })
+    },
+    searchInput:function(event){
+      this.setData({
+        searchString:event.detail.value
+      })
+    },
+    search:function(){
+      console.log(11)
+      this.setData({
+        scrollTopId: this.data.searchString
+      })
+      console.log(this.data.scrollTopId)
     },
     //触发全部开始选择
     chStart:function(){

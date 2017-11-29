@@ -18,7 +18,9 @@ Page({
     checkecd: "checked",
     timeIndex: 0,
     isPhoneNum:false,
-    timeArray: ['周末', '工作日', '随时']
+    timeArray: ['周末', '工作日', '随时'],
+    "toastContent":"该客户在保护期中",
+    "toastShow":false
   },
 
   /**
@@ -32,13 +34,18 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    this.showToast("该客户在保护期中",3);
+    this.setData({
+      value1: getApp().globalData.location.village
+    });
+    
   },
 
   /**
@@ -52,7 +59,7 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-
+    getApp().globalData.location.village = "请选择";
   },
 
   /**
@@ -171,5 +178,25 @@ Page({
         "isPhoneNum": true
       })
     }
+  },
+  showToast:function(content,duration){
+    content = content || this.data.toastContent;
+    duration = duration || 3;
+    this.setData({
+      'toastContent':content,
+      "toastShow":true
+    });
+
+    setTimeout(()=>{
+      this.setData({
+        "toastShow":false
+      })
+    },duration*1000)
+
+  },
+  gotoVillage:function(){
+    wx.navigateTo({
+      url: '../sctVillage/sctVillage',
+    })
   }
 })

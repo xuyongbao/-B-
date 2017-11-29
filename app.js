@@ -25,6 +25,12 @@ App({
     }
   },
   globalData:{
-    userInfo:null
+    userInfo:null,
+    userName:"angle",
+    userPhoneNum:"13319990000",
+    location:{
+      cityName:"全部",
+      village:'请选择'
+    }
   }
 })

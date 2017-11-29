@@ -1,36 +1,36 @@
-<view class="search">
+<view class="search hidden">
   <view>
-    <icon type='search' size="12" color='#666'></icon>
-    <input type='text' confirm-type='search' placeholder='请输入城市中文名称或拼音' placeholder-style='#ccc'></input>
-  </view>
+    <icon type='search' size="12" color='#666' bindtap='search'></icon>
+    <input type='text' confirm-type='search' placeholder='请输入城市首字母大写' placeholder-style='#ccc' bindinput='searchInput' bindconfirm='search'></input>
+  </view> 
 </view>
 
 <scroll-view scroll-y="true" style="height: {{winHeight}}px;" scroll-into-view="{{scrollTopId}}" class="city_list">
-    <view class='location'>
+    <view class='location hidden'>
       <text class='loc_title'>定位城市</text>
       <view class='loc_txt'>
         <text class='loc_l'>上海</text>
         <text class='loc_g'>GPS定位</text>
       </view>
     </view>
-    <view class='hot_city'>
-      <block wx:for="{{city}}" wx:for-index="idx" wx:for-item="cityName">
+    <view class='hot_city hidden'>
+      <block wx:for="{{city}}" wx:for-index="idx" wx:for-item="cityName"  wx:key="name" >
         <block wx:if="{{idx == '热门城市'}}">
-          <text id="{{idx}}" class="loc_title">{{idx}}</text>
+          <text class="loc_title">{{idx}}</text>
           <view class='hot_list'>
             <block >
-              <text wx:for="{{cityName}}" class="list_item">{{item.name}}</text>
+              <text wx:for="{{cityName}}"  bindtap='getCityName'  wx:key="name" class="list_item"  wx:key="name" data-city='{{item.name}}' >{{item.name}}</text>
             </block>
           </view>
         </block>
       </block>
     </view>
 
-    <block wx:for="{{city}}" wx:for-index="idx" wx:for-item="cityName">
+    <block wx:for="{{city}}" wx:for-index="idx" wx:for-item="cityName"  wx:key="name" >
       <block wx:if="{{idx != '热门城市'}}">
-        <text id="{{idx}}" class="list_tit">{{idx}}</text>
-        <block wx:for="{{cityName}}">
-          <view class="list_con">{{item.name}}</view>
+        <text id="{{idx}}" class="list_tit" >{{idx}}</text>
+        <block wx:for="{{cityName}}"  wx:key="name" >
+          <view class="list_con" data-city='{{item.name}}' bindtap='getCityName' >{{item.name}}</view>
         </block>
       </block>
     </block>
@@ -42,7 +42,7 @@
       catchtouchmove="chMove"
       style="background: rgba(0,0,0,{{trans}});"
       >
-   <block wx:for="{{city}}" wx:for-index="idx" wx:for-item="cityName">
+   <block wx:for="{{city}}" wx:for-index="idx" wx:for-item="cityName"  wx:key="name" >
       <block wx:if="{{idx != '热门城市'}}">
        <view id="{{idx}}" class="scroll_list_chi" style="line-height:{{lineHeight}}px ; height:{{lineHeight}}px ;font-size:{{lineHeight/1.7}}px;" bindtouchstart="getWords" bindtouchend="setWords">{{idx}}</view>
       </block>

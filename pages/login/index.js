@@ -4,13 +4,14 @@ Page({
         "isOpen":true,
         "isRegister":false,
         "isOpenEye":false,
-        "phoneNum":"13312345678",
+        "phoneNum":"",
         "passWordIsInput":false
     },
     onLoad: function (options) {
         // 生命周期函数--监听页面加载
        
-      this.renderPhoneNum();
+      
+      
     },
     onReady: function () {
         // 生命周期函数--监听页面初次渲染完成
@@ -30,9 +31,12 @@ Page({
 
     },
     goToRegister:function(){
-      wx.navigateTo({
-        url:"../register/index"
-      })
+      var globalUserPhoneNum = getApp().globalData.userPhoneNum;
+      getApp().globalData.userPhoneNum = this.data.phoneNum;
+      this.setData({
+        isRegister:true
+      });
+      this.renderPhoneNum();
     },
     renderPhoneNum: function () {
       var phone = this.data.phoneNum;
@@ -80,7 +84,8 @@ Page({
         })
       } else {
         this.setData({
-          "isPhoneNum": true
+          "isPhoneNum": true,
+          "phoneNum":event.detail.value
         })
       }
     },
@@ -93,6 +98,12 @@ Page({
         fail: function () {
           console.log("拨打电话失败！")
         }
+      })
+    },
+    goToIndexPage:function(){
+      console.log(11)
+      wx.switchTab({
+        url: '../index/index',
       })
     }  
 

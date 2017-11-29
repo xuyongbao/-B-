@@ -1,4 +1,5 @@
 {
   "navigationBarTitleText": "房屋B端小程序",
-  "navigationBarBackgroundColor": "#F9F9F9"
+  "navigationBarBackgroundColor": "#F9F9F9",
+  "enablePullDownRefresh": false
 }

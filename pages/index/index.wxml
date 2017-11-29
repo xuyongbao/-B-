@@ -1,5 +1,5 @@
 <!--pages/index/index.wxml-->
-<swiper class="id_banner" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{circular}}">  
+<swiper class="id_banner" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{circular}}" >  
   <block wx:for="{{imgUrls}}" wx:key="link">  
     <swiper-item>  
       <navigator url="{{item.link}}">  
@@ -12,7 +12,7 @@
 <view class='id_nav'>
   <scroll-view class="id_nav_list" scroll-x="true">
     <block wx:for="{{navList}}" wx:key="link">  
-      <navigator url=''>
+      <navigator url='{{item.link}}'>
         <image src="{{item.url}}"></image> 
       </navigator>
     </block>  

@@ -1,9 +1,9 @@
-<!--pages/sale/sale.wxml-->
+<!--pages/release/release.wxml-->
 <view class='rl_box'>
   <view class='rl_list'>
     <block>
       <view class='rl_title'>小区信息</view>
-      <view class='rl_content_box'>
+      <view class='rl_content_box' bindtap='gotoVillage'>
         <view class='rl_content rl_shadow'>
           <text class='flex3'>小区名称：</text>
           <text class='flex9' data-key="value1">{{value1}}</text>
@@ -56,3 +56,10 @@
     <button type='warn' disabled='{{disabled}}' bindtap='submit'>立即提交</button>
   </view>
 </view>
+
+<view class='toast_diy' wx:if="{{toastShow}}">
+  <view class='diy_content'>
+    <text>{{toastContent}}</text>  
+  </view>
+</view>
+

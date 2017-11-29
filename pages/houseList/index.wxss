@@ -110,6 +110,9 @@ page{
 .color_ok{
   background:#f3ad3d;
 }
+.color_pay{
+  background: #b1e46e
+}
 
 .item_middle,.item_bottom{
   margin-top:30rpx;

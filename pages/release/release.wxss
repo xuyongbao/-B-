@@ -101,3 +101,24 @@
 
 
 
+/* 弹窗toast */
+.toast_diy{
+  position: fixed;
+  top:50%;
+  left:50%;
+  height:128rpx;
+  width:370rpx;
+  margin:-64rpx 0  0 -185rpx;
+  background: rgba(17,17,17,.8);
+  z-index: 9;
+  border-radius: 16rpx;
+  line-height: 128rpx;
+  text-align: center;
+  font-family: PingFangSC-Regular;
+  font-size: 32rpx;
+  color: #FFFFFF;
+}
+.toast_diy text{
+  display: block;
+  
+}

@@ -26,7 +26,8 @@ Page({
         distance: "5km",
         address: "共和新路1332弄1-3号共和新路2989弄1-3号"
       }
-    ]
+    ],
+    city: '上海市'
   
   },
 
@@ -41,14 +42,16 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-  
+    
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+    this.setData({
+      city: getApp().globalData.location.cityName
+    });
   },
 
   /**
@@ -62,7 +65,7 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-  
+    getApp().globalData.location.cityName = "全部";
   },
 
   /**
@@ -84,5 +87,11 @@ Page({
    */
   onShareAppMessage: function () {
   
+  },
+  backtofrom:function(event){
+    getApp().globalData.location.village = event.currentTarget.dataset.village;
+    wx.navigateBack({
+      
+    });
   }
 })

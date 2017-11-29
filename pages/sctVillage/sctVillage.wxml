@@ -1,16 +1,16 @@
 <!--pages/sctVillage/sctVillage.wxml-->
 <view class='vlSc_box'>
   <view class='vlSc_top'>
-    <navigator url='' class='city_result'>
-      <view>上海市</view>
+    <navigator url='../cityList/index' class='city_result'>
+      <view>{{city}}</view>
       <icon class='tip'></icon>
     </navigator>
     <input type='text' placeholder='输入小区名称或社区号搜索社区' placeholder-style='color:#ccc;'></input>
   </view>
 
   <view class='vlSc_main'>
-    <block wx:for="{{villages}}" wx-key="name">
-      <view class='vlSc_li'>
+    <block wx:for="{{villages}}" wx:key="name">
+      <view class='vlSc_li' bindtap='backtofrom' data-village='{{item.name}}'>
         <view class='top'>
           <view class='name ellipse1'>
             <image src='../../images/build@2x.png'></image>
@@ -26,3 +26,4 @@
     </block>
   </view>
 </view>
+

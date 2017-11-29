@@ -9,7 +9,7 @@ Page({
     imgUrls: [
       {
         link: '/pages/index/index',
-        url: '../../images/czsm_banner@2x.png'
+        url: '../../images/czsm_banner@2x.png',
       },
        {
         link: '/pages/index/index',
@@ -26,27 +26,15 @@ Page({
     ],
     navList:[
       {
-        link: '/pages/index/index',
+        link: '../release/release',
         url: '../../images/zf_btn@2x.png'
       },
       {
-        link: '/pages/index/index',
+        link: '../sale/sale',
         url: '../../images/fbmf_btn@2x.png'
       },
       {
-        link: '/pages/index/index',
-        url: '../../images/tjkh_btn@2x.png'
-      },
-      {
-        link: '/pages/index/index',
-        url: '../../images/zf_btn@2x.png'
-      },
-      {
-        link: '/pages/index/index',
-        url: '../../images/fbmf_btn@2x.png'
-      },
-      {
-        link: '/pages/index/index',
+        link: '../addCustomer/index',
         url: '../../images/tjkh_btn@2x.png'
       }
     ],
@@ -124,5 +112,8 @@ Page({
         console.log("转发失败")
       }
     }
+  },
+  stopMove:function(event){
+    return false;
   }
 })

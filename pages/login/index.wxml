@@ -53,12 +53,12 @@
   
 </view>
 
-<button wx-if='{{isRegister}}' size='default' type='warn' class='cor_sub register_sub' disabled='{{!passWordIsInput}}'>登录</button>
+<button wx-if='{{isRegister}}' size='default' type='warn' class='cor_sub register_sub' disabled='{{!passWordIsInput}}' bindtap='goToIndexPage'>登录</button>
 
 <view class='forget_password' wx-if='{{isRegister}}'>
   <navigator url='../forgetPassword/index'>忘记密码</navigator>
 </view>
 <view class='sms_login' wx-if='{{isRegister}}'>
-  <navigator url='../smsRegister/index'>短信验证码登录</navigator>
+  <navigator url='../smsLogin/index'>短信验证码登录</navigator>
 </view>
 

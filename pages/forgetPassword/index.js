@@ -1,7 +1,6 @@
 Page({
     data: {
         "isOpenEye":false,
-        "phoneNum":"13312345678",
         "passWordIsInput": false,
         "isSend": false,
         "time": '59',
@@ -47,7 +46,7 @@ Page({
       }, 1000)
     },
     renderPhoneNum: function () {
-      var phone = this.data.phoneNum;
+      var phone = getApp().globalData.userPhoneNum;
       var newPhone = '';
       for (var i = 0; i < phone.length; i++) {
         if (i == 3 || i == 7) {

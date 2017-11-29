@@ -1,14 +1,20 @@
 Page({
     data: {
+      usrName:'',
+      phoneNum:""
     },
     onLoad: function (options) {
         // 生命周期函数--监听页面加载
+      
        
     },
     onReady: function () {
         // 生命周期函数--监听页面初次渲染完成
-       
-       
+      this.setData({
+        userName: getApp().globalData.userName,
+        phoneNum: getApp().globalData.userPhoneNum
+      })
+      this.renderPhoneNum();
     },
     onShow: function () {
         // 生命周期函数--监听页面显示
@@ -21,6 +27,25 @@ Page({
     onUnload: function () {
         // 生命周期函数--监听页面卸载
 
+    },
+    renderPhoneNum:function(){
+      var num = this.data.phoneNum;
+      var s = '';
+      for(var i=0; i<num.length; i++){
+        if(i>2 && i<7){
+          s+="*";
+        }else{
+          s+=num[i];
+        }
+      }
+      this.setData({
+        phoneNum:s
+      });
+    },
+    changePage:function(){
+      wx.navigateTo({
+        url: '../login/index',
+      })
     },
     upDataPic:function(){
       wx.showActionSheet({

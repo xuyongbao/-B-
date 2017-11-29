@@ -1,4 +1,4 @@
-// pages/sale/sale.js
+// pages/release/release.js
 
 Page({
 
@@ -18,7 +18,9 @@ Page({
     checkecd: "checked",
     timeIndex: 0,
     isPhoneNum: false,
-    timeArray: ['周末', '工作日', '随时']
+    timeArray: ['周末', '工作日', '随时'],
+    "toastContent": "该客户在保护期中",
+    "toastShow": false
   },
 
   /**
@@ -39,20 +41,11 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    wx.showModal({
-      title: '提示',
-      content: '请重新登录以继续操作',
-      cancelText: '取消',
-      confirmText: '确认',
-      confirmColor: "#C81528",
-      success: function (res) {
-        if (res.confirm) {
-          console.log('已确定')
-        } else if (res.cancel) {
-          console.log('已取消')
-        }
-      }
-    })
+    this.showToast("该客户在保护期中", 3);
+    this.setData({
+      value1: getApp().globalData.location.village
+    });
+    
   },
 
   /**
@@ -66,7 +59,7 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-
+    getApp().globalData.location.village = "请选择";
   },
 
   /**
@@ -186,4 +179,24 @@ Page({
       })
     }
   },
+  showToast: function (content, duration) {
+    content = content || this.data.toastContent;
+    duration = duration || 3;
+    this.setData({
+      'toastContent': content,
+      "toastShow": true
+    });
+
+    setTimeout(() => {
+      this.setData({
+        "toastShow": false
+      })
+    }, duration * 1000)
+
+  },
+  gotoVillage: function () {
+    wx.navigateTo({
+      url: '../sctVillage/sctVillage',
+    })
+  }
 })

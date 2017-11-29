@@ -3,9 +3,9 @@
     <image src='../../images/我@2x.png'></image>
   </view>
   <view class='header_right'>
-    <text class='header_name'>尹捷</text>
+    <text class='header_name'>{{userName}}</text>
     <text class='header_sex'>女士</text>
-    <text class='header_tel'>13910001000</text>
+    <text class='header_tel'>{{phoneNum}}</text>
   </view>
 </view>
 <view class='lan'></view>
@@ -40,5 +40,5 @@
     <text>如修改绑定小区，请联系物业房屋管家</text>
   </view>
   
-  <button type='default' class='change'>切换账号</button>
+  <button type='default' class='change' bindtap='changePage'>切换账号</button>
 </view>
