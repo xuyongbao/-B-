@@ -1,5 +1,6 @@
 {
   "pages":[
+    "pages/agreement/index",
     "pages/index/index",
     "pages/release/release",
     "pages/sctVillage/sctVillage",

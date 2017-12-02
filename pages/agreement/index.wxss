@@ -1,0 +1,31 @@
+view{
+  font-family: 'Microsoft YaHei';
+}
+.title{
+  font-size:36rpx;
+  line-height: 40rpx;
+  padding-top:30rpx;
+  margin-bottom:50rpx;
+  text-align: center; 
+  font-weight:bold;
+}
+.content{
+  font-size:28rpx;
+  line-height: 40rpx;
+  padding:0 40rpx;
+}
+.content text{
+  display: block;
+  margin-bottom:30rpx;
+}
+
+.subtitle{
+  font-size:32rpx;
+  padding:0 40rpx;
+  font-weight: bold;
+  margin-bottom:30rpx;
+}
+
+.line{
+  height:80rpx;
+}
